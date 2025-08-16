@@ -32,7 +32,7 @@ int main()
   // cout << res<<endl;zcvdf
 
 
-
+gh
 
   // method 3:Simple factorial formula Slow for large r, high overflow risk
 
