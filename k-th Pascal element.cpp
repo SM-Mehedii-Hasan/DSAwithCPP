@@ -29,7 +29,7 @@ int main()
   // for(int j=1;j<=c;j++){
   //     res /= j;
   // }
-  // cout << res<<endl;
+  // cout << res<<endl;zcvdf
 
 
 
@@ -40,7 +40,7 @@ int main()
   // for(int i=1;i<=r;i++) rfact *= i;
   // for(int j=1;j<=c;j++) cfact *= j;
   // for(int k=1;k<=r-c;k++) rcfact *= k;
-  // int element = rfact / (cfact * rcfact);
+  // int element = rfact / (cfact * rcfact);fshsdgn
   // cout << element << endl;
 }
 
