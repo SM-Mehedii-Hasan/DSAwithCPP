@@ -4,7 +4,7 @@
 // using namespace std;
 // int main(){
 //    int n;cin>>n;
-//    if((n&(n-1))==0) cout<<n<<" is the power of two"<<endl;
+//    if(n>0(n&(n-1))==0) cout<<n<<" is the power of two"<<endl;
 //    else cout<<n<<" isn't the power of two"<<endl;
 // }
 // ______________2.iterative multiplication method_____________________________
