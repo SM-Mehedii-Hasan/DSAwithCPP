@@ -1,4 +1,20 @@
 // power of two
+// #include <iostream>
+// #include <cstdint>  // For uint32_t
+// using namespace std;
+
+// int main() {
+//     uint32_t n;
+//     cin >> n;
+    
+//     if (n > 0 && (n & (n - 1)) == 0) {
+//         cout << n << " is the power of 2" << endl;
+//     } else {
+//         cout << n << " is not the power of 2" << endl;
+//     }
+    
+//     return 0;
+// }
 // ________________________1.using bitwise trick____________________________________
 // #include<iostream>
 // using namespace std;
