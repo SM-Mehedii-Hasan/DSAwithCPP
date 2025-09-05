@@ -71,3 +71,18 @@ int main(){
 // }
 // for(auto x:nge) cout<<x<<" ";
 // }
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>v={6, 5, 4, 3, 2, 1, 7};
+    vector<int>ans(v.size());
+    stack<int>s;
+    for(int i=v.size()-1;i>=0;i--){
+        while(!s.empty()&&s.top()<=v[i]) s.pop();
+        if(!s.empty()) ans[i]=s.top();
+        else ans[i]=-1;
+        s.push(v[i]); 
+    }
+    for(auto x:ans) cout<<x<<" ";
+     
+}
