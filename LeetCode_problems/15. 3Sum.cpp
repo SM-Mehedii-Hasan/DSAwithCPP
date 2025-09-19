@@ -1,3 +1,27 @@
+
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        int n=nums.size();
+        set<vector<int>>st;
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<n-2;i++){
+            set<int>hash;
+            for(int j=i+1;j<n;j++){
+                int third=-(nums[i]+nums[j]);
+                if(hash.find(third)!=hash.end()){
+                    vector<int>triplet={nums[i],nums[j],third};
+                    sort(triplet.begin(),triplet.end());
+                    st.insert(triplet);
+                }
+                hash.insert(nums[j]);
+            }
+        }
+        vector<vector<int>>result(st.begin(),st.end());
+        return result;
+    }
+};
+________________________________________________________________________
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
