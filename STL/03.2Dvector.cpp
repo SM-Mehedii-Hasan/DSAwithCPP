@@ -159,3 +159,163 @@ int main(){
 
     
 }
+
+
+// ___________________________________________________________________________________
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector<vector<int>> vec;
+
+    vector<int> v1 = {1,2,3,4,5};
+    vector<int> v2 = {1,2,3,4,5};
+    vector<int> v3 = {1,2,3,4};
+    vector<int> v4 = {1,2,3,4,5};
+    vector<int> v5 = {1,2,5};
+
+    vec.push_back(v1);
+    vec.push_back(v2);
+    vec.push_back(v3);
+    vec.push_back(v4);
+    vec.push_back(v5);
+
+  //this is buggy !!!!!
+    // // 2. Indexed loop (using v1.size())
+    // for(size_t i=0; i<vec.size(); i++){
+    //     for(size_t j=0; j<v1.size(); j++){
+    //         cout << vec[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+
+
+    // 1. Indexed loop (using vec[i].size())
+    cout << "Indexed loop:\n";
+    for(size_t i=0; i<vec.size(); i++){
+        for(size_t j=0; j<vec[i].size(); j++){
+            cout << vec[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "\n\n";
+
+    // 2. Range-based loop (modern C++ style)
+    cout << "Range-based loop (row + element):\n";
+    for(auto v : vec){          // each 'v' is a row (vector<int>)
+        for(auto it : v){       // each 'it' is an element of the row
+            cout << it << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "\n\n";
+
+    // 3. Hybrid style: indexed outer, range-based inner
+    cout << "Hybrid loop (indexed outer, range-based inner):\n";
+    for(size_t i=0; i<vec.size(); i++){   // row index
+        for(auto it : vec[i]){            // each element
+            cout << it << " ";
+        }
+        cout << endl;
+    }
+        cout << "\n\n";
+
+    // 3. Hybrid loop (range-based + indices)
+    cout << "Hybrid loop:\n";
+    for(size_t i=0; i<vec.size(); i++){   // row index
+        size_t j = 0;
+        for(auto &val : vec[i]){          // iterate elements
+            cout << "(" << i << "," << j << ")=" << val << " ";
+            j++;
+        }
+        cout << endl;
+    }
+}
+
+
+
+
+
+
+
+// 🚩 What not to do
+// Don’t use a fixed size like v1.size() → unsafe if rows are different sizes.
+// ✅ What you should use (always)
+// If you only need to read or print values
+// → Use range-based for loops (cleanest and safest):
+// for (auto &row : vec) {
+//     for (auto &val : row) {
+//         cout << val << " ";
+//     }
+//     cout << endl;
+// }
+// If you also need indices (row/col positions)
+// → Use the hybrid style (indexed outer, range-based inner):
+// for (size_t i = 0; i < vec.size(); i++) {
+//     for (auto &val : vec[i]) {
+//         cout << val << " "; // you can still access j if needed
+//     }
+//     cout << endl;
+// }
+// If you need full index control (e.g., algorithms, matrix operations)
+// → Use pure indexed loops:
+
+// for (size_t i = 0; i < vec.size(); i++) {
+//     for (size_t j = 0; j < vec[i].size(); j++) {
+//         cout << vec[i][j] << " ";
+//     }
+//     cout << endl;
+// }
+// ⭐ Rule of thumb
+// Default → use range-based (simplest).
+// Need row index → hybrid.
+// Need both row + column indices → full indexed.
+// 👉 If you want one single style to use always, I’d say:
+// Use the hybrid loop — it’s clean, safe, and flexible.
+// ___________________________________________________________________________________________________
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  vector<vector<int>>vec1;
+  vector<int>vec2[5];
+  vec1.push_back({10,20,30,40});
+  vec1.push_back({20,30,40});
+  vec1[0].push_back(100);
+  vec1.push_back({100});
+  vec1[2].push_back(40);
+  for(auto r:vec1){
+    for(auto it:r){
+      cout<<it<<" ";
+    }cout<<endl;
+  }
+  cout<<"\n\n\n";
+  vec2[0].push_back(1);
+  vec2[1].push_back(4);
+  vec2[0].push_back(2);
+  vec2[3].push_back(4);
+  vec2[2].push_back(10);
+  vec2[2].push_back(3);
+  vec2[2].push_back(2);
+
+    for(auto r:vec2){
+    for(auto it:r){
+      cout<<it<<" ";
+    }cout<<endl;
+  }
+}
+
+
+// ✅ Key observations:
+// vector<vector<int>> vec1 allows dynamic addition of rows and columns.
+// vector<int> vec2[5] has a fixed number of rows (5), but each row can grow dynamically.
+// Both types can be printed the same way using range-based for loops.
+// vec1 can handle unknown number of rows at runtime, whereas vec2 cannot.
+
+
+
+
+
+
