@@ -315,7 +315,23 @@ int main(){
 // vec1 can handle unknown number of rows at runtime, whereas vec2 cannot.
 
 
-
-
-
-
+// ______________________________________________
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  vector<vector<vector<int>>>vec;
+  vec.push_back({{1,3,4,5},{4,6,3,6}});
+    vec.push_back({{1,3,4,5},{4,6,3,6}});
+      vec.push_back({{1,3,4,5},{4,6,3,6},{10,49,50}});
+        vec.push_back({{1,3,4,5},{4,6,3,6}});
+          vec.push_back({{1,3,4,5},{4,6,3,6},{10,50,4}});
+       vec[4].push_back({});   // add empty row at index 3
+vec[4][3].push_back(3);
+  for(auto x:vec){
+    for(auto y:x){
+      for(auto z:y){
+        cout<<z<<" ";
+      }cout<<endl;
+    }cout<<endl;
+  }
+}
