@@ -6,9 +6,7 @@ A trailing zero is produced by a factor of 10, and
 5
 10=2×5.
 
-In 
-𝑛
-!
+In 𝑛!
 n!, there are more factors of 2 than 5, so the number of trailing zeros is determined by the number of 5s in the factorial’s factors.
 
 _________________________________________________________________________________________________
