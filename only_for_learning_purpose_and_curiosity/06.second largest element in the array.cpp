@@ -27,8 +27,7 @@ int main(){
     }
     cout<<max2<<endl;
 }
-
-method 2: 
+ _________________________________________________________________________________________
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -47,6 +46,23 @@ int main(){
 
         }
     }
+    cout<<max2<<endl;
+}
+________________________________________________________________________
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>arr={25,16,38,10,35,48,20,50,50};
+    int n=arr.size();
+    int max2;
+     sort(arr.begin(),arr.end());
+     for(int i=n-2;i>=0;i--){
+        if(arr[i]!=arr[n-1]) {
+            max2=arr[i];
+        break;
+        }
+     }
+   
     cout<<max2<<endl;
 }
 
