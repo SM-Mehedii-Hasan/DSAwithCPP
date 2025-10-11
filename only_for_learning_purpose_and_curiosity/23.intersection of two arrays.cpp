@@ -1,3 +1,54 @@
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+#include<algorithm>
+using namespace std;
+int main(){
+     vector<int> arr1 = {1, 2, 3, 4, 6, 5, 4, 4};
+     vector<int> arr2 = {2, 3, 5, 5, 4, 4, 2};
+     sort(arr1.begin(),arr1.end());
+     sort(arr2.begin(),arr2.end());
+     unordered_map<int,int>hash;
+     vector<int>ans;
+     for(auto x:arr1) hash[x]++;
+     for(int x:arr2){
+        if(hash[x]>0){
+            ans.push_back(x);
+            hash[x]--;
+
+        }
+     }
+ for(auto x:ans)  cout<<x<<" ";
+
+    
+}
+// ____________________________________________________________
+#include<iostream>
+#include<vector>
+#include<map>
+#include<algorithm>
+using namespace std;
+int main(){
+     vector<int> arr1 = {1, 2, 3, 4, 6, 5, 4, 4};
+     vector<int> arr2 = {2, 3, 5, 5, 4, 4, 2};
+     sort(arr1.begin(),arr1.end());
+     sort(arr2.begin(),arr2.end());
+     map<int,int>hash;
+     vector<int>ans;
+     for(auto x:arr1) hash[x]++;
+     for(int x:arr2){
+        if(hash[x]>0){
+            ans.push_back(x);
+            hash[x]--;
+
+        }
+     }
+ for(auto x:ans)  cout<<x<<" ";
+
+    
+}
+
+
 // ================= Method 1: Two-pointer with set =================
 #include <iostream>
 #include <vector>
